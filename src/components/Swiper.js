@@ -11,20 +11,14 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 export default function App(props) {
-    const ImagesData = props.image;
+  const ImagesData = props.image;
   const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <div className="container mt-5 mb-5">
-      <h2 className="d-flex justify-content-start align-items-center ">
-        <span
-          className="vertical-line"
-          style={{
-            borderLeft: "5px solid black",
-            height: "30px",
-            marginRight: "5px",
-            color: "#FFFF00",
-          }}
-        ></span>
+    <div className="container mt-5 mb-5 ">
+      <h2
+        className="d-flex justify-content-start align-items-center text-warning "
+        style={{ borderLeft: "5px solid black", padding: "0px 0px 0px 10px" }}
+      >
         Offers Zone
       </h2>
       <Swiper
@@ -33,7 +27,7 @@ export default function App(props) {
         spaceBetween={30}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwipe"
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -56,14 +50,13 @@ export default function App(props) {
           },
         }}
       >
-         {ImagesData?.map((item, index) => (
-        <div key={index}>
-           <SwiperSlide>
-          <img src={item.imageUrl} />
-        </SwiperSlide>
-        </div>
-      ))}
-        
+        {ImagesData?.map((item, index) => (
+          <div key={index}>
+            <SwiperSlide>
+              <img className="shadow" src={item.imageUrl} />
+            </SwiperSlide>
+          </div>
+        ))}
       </Swiper>
     </div>
   );

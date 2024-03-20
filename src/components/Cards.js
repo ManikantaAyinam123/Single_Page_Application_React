@@ -3,29 +3,19 @@ import React from "react";
 const Cards = (props) => {
   const ImagesData = props.image;
   return (
-    <div className="container">
-      <h2 className="d-flex justify-content-start align-items-center ">
-        <span
-          className="vertical-line"
-          style={{
-            borderLeft: "5px solid black",
-            height: "30px",
-            marginRight: "5px",
-            color: "#FFFF00",
-          }}
-        ></span>
-        Offers Zone
+    <div className="container mt-5 ">
+      <h2
+        className="d-flex justify-content-start align-items-center text-warning "
+        style={{ borderLeft: "5px solid black", padding: "0px 0px 0px 10px" }}
+      >
+       Trending Zone
       </h2>
-      
-      <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2 mt-0">
+
+      <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2 mt-3">
         {ImagesData?.map((item, index) => (
-          <div key={index} className="col">
-            <div className="card h-100">
-              <img
-                src={item.imageUrl}
-                className="card-img-top"
-                alt="..."
-              />
+          <div key={index} className="col ">
+            <div className="card h-100 shadow ">
+              <img src={item.imageUrl} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">
                   Pitch Light Grey Oversized Urban Shirt for Men
